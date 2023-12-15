@@ -1,5 +1,7 @@
 package list;
 
+import java.util.Arrays;
+
 public class ArrayList<V> {
     private Object[] array = new Object[10];
     int size = 0;
@@ -83,10 +85,12 @@ public class ArrayList<V> {
         return array[index];
     }
 
-    public void print() {
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
+
+    @Override
+    public String toString() {
+        return
+                "array=" + Arrays.toString(array);
+
     }
 }
 
