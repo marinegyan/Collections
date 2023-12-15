@@ -28,9 +28,17 @@ public class HashSet<V> {
             }
         }
     }
-
-
-
+    public boolean contains(V value) {
+       int index = value.hashCode()%arrSize;
+       List<Entry<V>> bucket = list.get(index);
+       for(int i = 0;i< bucket.size();i++){
+           Entry<V> x = bucket.get(i);
+           if(x.getValue().equals(value)){
+               return true;
+           }
+       }
+       return false;
+    }
 
     public static class Entry<V>{
     private V value;
