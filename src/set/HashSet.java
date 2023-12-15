@@ -18,6 +18,16 @@ public class HashSet<V> {
            bucket.add(new Entry<>(value));
        }
     }
+    public void remove(V value){
+        int index = value.hashCode() % arrSize;
+        List<Entry<V>> bucket = list.get(index);
+        for(int i=0;i< bucket.size();i++){
+            Entry<V> x = bucket.get(i);
+            if(x.getValue().equals(value)){
+                bucket.remove(x);
+            }
+        }
+    }
 
 
 
