@@ -1,7 +1,5 @@
 package list;
 
-import java.util.Arrays;
-
 public class ArrayList<V> {
     private Object[] array = new Object[10];
     int size = 0;
