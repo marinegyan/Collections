@@ -21,6 +21,16 @@ public class HashMap<K, V> {
         }
         bucket.add(new Entry<>(key,value));
     }
+    public void remove(K key, V value){
+        int index = value.hashCode() % arrSize;
+        List<Entry<K,V>> bucket = list.get(index);
+        for(int i=0;i< bucket.size();i++){
+            Entry<K,V> x = bucket.get(i);
+            if(x.getKey().equals(key)){
+                bucket.remove(x);
+            }
+        }
+    }
 
 
 
