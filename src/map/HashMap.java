@@ -7,6 +7,22 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class HashMap<K, V> {
+    private final int arrSize = 16;
+    private final List<List<Entry<K,V>>> list = new ArrayList<>(arrSize);
+
+    public void add(K key, V value) {
+        int index = value.hashCode() % arrSize;
+        List<Entry<K,V>> bucket = list.get(index);
+        for (int i = 0; i < bucket.size(); i++) {
+            Entry<K,V> x = bucket.get(i);
+            if (x.getValue().equals(key)) {
+                return;
+            }
+        }
+        bucket.add(new Entry<>(key,value));
+    }
+
+
 
 
 
