@@ -1,5 +1,7 @@
 package list;
 
+import java.util.HashSet;
+
 public class Main {
     public static void main(String[] args) {
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -12,6 +14,7 @@ public class Main {
        arrayList.remove(5);
        arrayList.print();
        System.out.println(arrayList.contains(1));
+
 
 
     }
